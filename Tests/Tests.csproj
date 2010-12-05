@@ -40,11 +40,12 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActualBoardTest.cs" />
     <Compile Include="EmptyBoardTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Sudoku.csproj">
+    <ProjectReference Include="..\Sudoku.csproj">
       <Project>{96106237-EC6D-4503-BE1C-798729B3CAB4}</Project>
       <Name>Sudoku</Name>
     </ProjectReference>
