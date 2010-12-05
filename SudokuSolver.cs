@@ -31,7 +31,7 @@ namespace SudokuSolver
         /// we don't care if there are 2 or 2000 solutions
         /// there should only be one 
         /// </summary>
-        private const int MaxSolutions = 2;
+        public const int MaxSolutions = 2;
 
         /// <summary>
         /// Number of solutions found
