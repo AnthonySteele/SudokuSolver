@@ -9,7 +9,7 @@
         [Test]
         public void SampleBoardIsConsistent()
         {
-            int[,] board = GetSampleBoardToSolve();
+            int[,] board = GetBoard();
 
             bool isConsistent = Solver.IsConsistent(board);
 
@@ -20,7 +20,7 @@
         [Test]
         public void CanSolveSampleBoard()
         {
-            int[,] board = GetSampleBoardToSolve();
+            int[,] board = GetBoard();
 
             Solver solver = new Solver();
             bool solved = solver.Solve(board);
@@ -29,7 +29,7 @@
             TestHelper.TestSolutionValid(solver.GetFirstSolution());
         }
 
-        private static int[,] GetSampleBoardToSolve()
+        private static int[,] GetBoard()
         {
             return new int[9, 9] 
             { 

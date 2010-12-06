@@ -112,6 +112,11 @@ namespace SudokuSolver
             return CopyBoard(this.firstSolution);
         }
 
+        /// <summary>
+        /// Solve the board
+        /// </summary>
+        /// <param name="boardData">the board to solve</param>
+        /// <returns>true if a solution can be found</returns>
         public bool Solve(int[,] boardData)
         {
             if (Solver.IsConsistent(boardData))
@@ -120,31 +125,6 @@ namespace SudokuSolver
             }
 
             return false;
-        }
-
-        /// <summary>
-        /// Solve the puzzle
-        /// Get a board, try to fill the first empty cell
-        /// Return if this can be done with a value that is unique
-        /// and can solve further through all other cells
-        /// </summary>
-        /// <param name="boardData">the board's data</param>
-        /// <returns>true if the board can be solved</returns>
-        private bool SolveInternal(int[,] boardData)
-        {
-            for (int ix = 0; ix < BoardSize; ix++)
-            {
-                for (int iy = 0; iy < BoardSize; iy++)
-                {
-                    if (boardData[ix, iy] == 0)
-                    {
-                        return this.SolveCell(boardData, ix, iy);
-                    }
-                }
-            }
-
-            // no cells empty
-            return true;
         }
 
         /// <summary>
@@ -242,6 +222,31 @@ namespace SudokuSolver
               UniqueInRow(boardData, val, x, y) &&
               UniqueInCol(boardData, val, x, y) &&
               UniqueInNonstant(boardData, val, x, y);
+        }
+
+        /// <summary>
+        /// Solve the puzzle
+        /// Get a board, try to fill the first empty cell
+        /// Return if this can be done with a value that is unique
+        /// and can solve further through all other cells
+        /// </summary>
+        /// <param name="boardData">the board's data</param>
+        /// <returns>true if the board can be solved</returns>
+        private bool SolveInternal(int[,] boardData)
+        {
+            for (int ix = 0; ix < BoardSize; ix++)
+            {
+                for (int iy = 0; iy < BoardSize; iy++)
+                {
+                    if (boardData[ix, iy] == 0)
+                    {
+                        return this.SolveCell(boardData, ix, iy);
+                    }
+                }
+            }
+
+            // no cells empty
+            return true;
         }
 
         /// <summary>

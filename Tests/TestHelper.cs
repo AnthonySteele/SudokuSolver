@@ -27,7 +27,7 @@ namespace Tests
                 List<int> rowValues = new List<int>();
                 for (int x = 0; x < 9; x++)
                 {
-                    // a cell's value has not occurend before in the row
+                    // a cell's value has not occured before in the row
                     int newValue = solvedBoard[x, y];
                     Assert.IsFalse(rowValues.Contains(newValue), "Found duplicate cell value " + newValue + " in row");
                     rowValues.Add(newValue);
@@ -42,7 +42,7 @@ namespace Tests
                 List<int> columnValues = new List<int>();
                 for (int y = 0; y < 9; y++)
                 {
-                    // a cell's value has not occurend before in the column
+                    // a cell's value has not occured before in the column
                     int newValue = solvedBoard[x, y];
                     Assert.IsFalse(columnValues.Contains(newValue), "Found duplicate cell value " + newValue + " in column");
                     columnValues.Add(newValue);
