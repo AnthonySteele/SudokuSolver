@@ -26,6 +26,8 @@
 
         public static void TestSolutionValid(int[,] solvedBoard)
         {
+            Assert.IsNotNull(solvedBoard, "board is null");
+
             foreach (int value in solvedBoard)
             {
                 Assert.Greater(value, 0);

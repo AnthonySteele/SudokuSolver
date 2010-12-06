@@ -26,6 +26,16 @@
             bool solved = solver.Solve(board);
 
             Assert.IsTrue(solved);
+        }
+
+        [Test]
+        public void SolutionIsValid()
+        {
+            int[,] board = GetBoard();
+
+            Solver solver = new Solver();
+            solver.Solve(board);
+
             TestHelper.TestSolutionValid(solver.GetFirstSolution());
         }
 
@@ -41,7 +51,7 @@
                 { 0, 0, 0, 0, 5, 0, 0, 0, 0 },
                 { 0, 0, 7, 0, 0, 4, 0, 2, 8 },
                 { 2, 3, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 5, 4, 2, 0, 0, 0, 9, 0 }
+                { 0, 5, 4, 2, 0, 0, 0, 9, 1 }
             };
         }
     }

@@ -22,6 +22,20 @@
         }
 
         [Test]
+        public void SolutionIsCorrect()
+        {
+            Solver solver = new Solver();
+            int[,] board = GetBoard();
+
+            solver.Solve(board);
+
+            int[,] solution = solver.GetFirstSolution();
+
+            TestHelper.TestSolutionValid(solution);
+            TestHelper.BoardsAreSameInFilledCells(solution, GetBoardSolution());
+        }
+
+        [Test]
         public void SimpleBoardIsConsistent()
         {
             int[,] board = GetBoard();

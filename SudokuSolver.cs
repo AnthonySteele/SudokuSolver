@@ -121,7 +121,9 @@ namespace SudokuSolver
         {
             if (Solver.IsConsistent(boardData))
             {
-                return this.SolveInternal(boardData);
+                this.SolveInternal(boardData);
+
+                return this.solutionCount > 0;
             }
 
             return false;
@@ -253,7 +255,7 @@ namespace SudokuSolver
         /// solve the empty cell by testing the possible digits in it 
         ///  uses mutual recursion with SolveInternal
         /// </summary>
-        /// <param name="boardData">thre board data</param>
+        /// <param name="boardData">the board data</param>
         /// <param name="x">the cell x co-ordinate</param>
         /// <param name="y">the cell y-coordinate</param>
         /// <returns>true of the cell can be solved</returns>
