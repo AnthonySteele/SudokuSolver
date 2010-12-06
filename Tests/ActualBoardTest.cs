@@ -3,6 +3,9 @@
     using NUnit.Framework;
     using SudokuSolver;
 
+    /// <summary>
+    /// Test using a board torn from the pages of a discarded newspaper
+    /// </summary>
     [TestFixture]
     public class ActualBoardTest
     {
