@@ -112,6 +112,16 @@ namespace SudokuSolver
             return CopyBoard(this.firstSolution);
         }
 
+        public bool Solve(int[,] boardData)
+        {
+            if (Solver.IsConsistent(boardData))
+            {
+                return this.SolveInternal(boardData);
+            }
+
+            return false;
+        }
+
         /// <summary>
         /// Solve the puzzle
         /// Get a board, try to fill the first empty cell
@@ -120,7 +130,7 @@ namespace SudokuSolver
         /// </summary>
         /// <param name="boardData">the board's data</param>
         /// <returns>true if the board can be solved</returns>
-        public bool Solve(int[,] boardData)
+        private bool SolveInternal(int[,] boardData)
         {
             for (int ix = 0; ix < BoardSize; ix++)
             {
@@ -236,7 +246,7 @@ namespace SudokuSolver
 
         /// <summary>
         /// solve the empty cell by testing the possible digits in it 
-        ///  uses mutual recursion with Solve
+        ///  uses mutual recursion with SolveInternal
         /// </summary>
         /// <param name="boardData">thre board data</param>
         /// <param name="x">the cell x co-ordinate</param>
@@ -249,7 +259,7 @@ namespace SudokuSolver
                 if (UniqueInAllWays(boardData, testVal, x, y))
                 {
                     boardData[x, y] = testVal;
-                    if (this.Solve(boardData))
+                    if (this.SolveInternal(boardData))
                     {
                         // we have a winner
                         if (this.solutionCount == 0)

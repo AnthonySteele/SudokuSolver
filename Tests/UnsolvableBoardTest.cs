@@ -17,6 +17,16 @@
             Assert.IsFalse(isConsistent);
         }
 
+        [Test]
+        public void NoSolutionFoundToUnsolvableBoard()
+        {
+            int[,] board = GetUnsolvableBoard();
+            Solver solver = new Solver();
+            bool solved = solver.Solve(board);
+
+            Assert.IsFalse(solved);
+        }
+
         private static int[,] GetUnsolvableBoard()
         {
             return new int[9, 9] 

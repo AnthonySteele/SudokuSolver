@@ -31,18 +31,13 @@
         [Test]
         public void EmptyBoardSolutionIsValid()
         {
-            Solver solver = new Solver();
             int[,] board = new int[9, 9];
+            Solver solver = new Solver();
 
             solver.Solve(board);
-
             int[,] firstSolution = solver.GetFirstSolution();
 
-            foreach (int value in firstSolution)
-            {
-                Assert.Greater(value, 0);
-                Assert.Less(value, 10);
-            }
+            TestHelper.TestSolutionValid(firstSolution);
         }
     }
 }
