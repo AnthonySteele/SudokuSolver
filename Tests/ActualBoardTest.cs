@@ -17,6 +17,18 @@
             Assert.IsTrue(isConsistent);
         }
 
+        [Test]
+        public void CanSolveSampleBoard()
+        {
+            int[,] board = GetSampleBoardToSolve();
+
+            Solver solver = new Solver();
+            bool solved = solver.Solve(board);
+
+            Assert.IsTrue(solved);
+            TestHelper.TestSolutionValid(solver.GetFirstSolution());
+        }
+
         private static int[,] GetSampleBoardToSolve()
         {
             return new int[9, 9] 
@@ -29,7 +41,7 @@
                 { 0, 0, 0, 0, 5, 0, 0, 0, 0 },
                 { 0, 0, 7, 0, 0, 4, 0, 2, 8 },
                 { 2, 3, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 5, 4, 2, 0, 0, 0, 9, 1 }
+                { 0, 5, 4, 2, 0, 0, 0, 9, 0 }
             };
         }
     }
