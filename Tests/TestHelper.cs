@@ -1,12 +1,29 @@
-﻿using System;
-
-namespace Tests
+﻿namespace Tests
 {
     using System.Collections.Generic;
     using NUnit.Framework;
 
     public static class TestHelper
     {
+        public static bool BoardsAreSameInFilledCells(int[,] board, int[,] solvedBoard)
+        {
+            for (int x = 0; x < 9; x++)
+            {
+                for (int y = 0; y < 9; y++)
+                {
+                    if (board[x, y] != 0)
+                    {
+                        if (board[x, y] != solvedBoard[x, y])
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+
+            return true;
+        }
+
         public static void TestSolutionValid(int[,] solvedBoard)
         {
             foreach (int value in solvedBoard)

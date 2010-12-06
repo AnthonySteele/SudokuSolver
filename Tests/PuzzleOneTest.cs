@@ -39,6 +39,12 @@
             TestHelper.TestSolutionValid(GetBoardSolution());
         }
 
+        [Test]
+        public void SolutionMatchesProblem()
+        {
+            Assert.IsTrue(TestHelper.BoardsAreSameInFilledCells(GetBoard(), GetBoardSolution()));
+        }
+
         private static int[,] GetBoard()
         {
             return new int[9, 9] 
