@@ -7,6 +7,16 @@
     public class EmptyBoardTest
     {
         [Test]
+        public void EmptyBoardIsConsistent()
+        {
+            int[,] board = new int[9, 9];
+
+            bool isConsistent = Solver.IsConsistent(board);
+
+            // there are no clashes in an empty board
+            Assert.IsTrue(isConsistent);
+        }
+        [Test]
         public void CanSolveEmptyBoard()
         {
             Solver solver = new Solver();

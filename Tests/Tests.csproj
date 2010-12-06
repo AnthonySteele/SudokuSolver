@@ -43,6 +43,8 @@
     <Compile Include="ActualBoardTest.cs" />
     <Compile Include="EmptyBoardTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleBoardTest.cs" />
+    <Compile Include="UnsolvableBoardTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sudoku.csproj">

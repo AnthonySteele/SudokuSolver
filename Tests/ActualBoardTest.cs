@@ -7,59 +7,14 @@
     public class ActualBoardTest
     {
         [Test]
-        public void CanSolveSimpleBoard()
+        public void SampleBoardIsConsistent()
         {
-            Solver solver = new Solver();
-            int[,] board = GetSimpleBoardToSolve();  
-
-            bool solved = solver.Solve(board);
-
-            // there is a solution to this board
-            Assert.IsTrue(solved);
-            Assert.GreaterOrEqual(solver.SolutionCount, 1);
-        }
-
-        [Test]
-        public void UnsolvableBoardIsNotConsistent()
-        {
-            int[,] board = GetUnsolvableBoard();
+            int[,] board = GetSampleBoardToSolve();
 
             bool isConsistent = Solver.IsConsistent(board);
 
-            // there is no solution to this board
-            Assert.IsFalse(isConsistent);
-        }
-
-        private static int[,] GetSimpleBoardToSolve()
-        {
-            return new int[9, 9] 
-            { 
-                { 1, 2, 3, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0 }
-            };
-        }
-
-        private static int[,] GetUnsolvableBoard()
-        {
-            return new int[9, 9] 
-            { 
-                { 1, 1, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0 }
-            };
+            // there is no clash this board
+            Assert.IsTrue(isConsistent);
         }
 
         private static int[,] GetSampleBoardToSolve()
