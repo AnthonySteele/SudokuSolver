@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="ActualBoardTest.cs" />
     <Compile Include="EmptyBoardTest.cs" />
+    <Compile Include="HardBoardTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PuzzleOneTest.cs" />
     <Compile Include="SimpleBoardTest.cs" />
