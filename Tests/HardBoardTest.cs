@@ -4,7 +4,8 @@
     using System.Diagnostics;
 
     using NUnit.Framework;
-    using SudokuSolver;
+
+    using Sudoku;
 
     /// <summary>
     /// Test using a "hard" board from http://www.forbeginners.info/sudoku-puzzles/hard-1.htm

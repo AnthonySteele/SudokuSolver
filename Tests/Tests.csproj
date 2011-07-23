@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActualBoardTest.cs" />
+    <Compile Include="MetroBoardTest.cs" />
     <Compile Include="EmptyBoardTest.cs" />
     <Compile Include="HardBoardTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

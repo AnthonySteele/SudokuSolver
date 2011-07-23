@@ -1,7 +1,8 @@
 ﻿namespace Tests
 {
     using NUnit.Framework;
-    using SudokuSolver;
+
+    using Sudoku;
 
     /// <summary>
     /// Test using a board torn from the pages of a discarded newspaper

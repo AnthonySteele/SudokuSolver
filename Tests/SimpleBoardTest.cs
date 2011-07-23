@@ -1,7 +1,8 @@
 ﻿namespace Tests
 {
     using NUnit.Framework;
-    using SudokuSolver;
+
+    using Sudoku;
 
     [TestFixture]
     public class SimpleBoardTest

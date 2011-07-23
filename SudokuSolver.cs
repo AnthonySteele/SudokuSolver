@@ -9,7 +9,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace SudokuSolver
+namespace Sudoku
 {
     /// <summary>
     /// solve a Sudoku grid

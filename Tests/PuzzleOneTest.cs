@@ -1,8 +1,9 @@
 ﻿namespace Tests
 {
     using NUnit.Framework;
-    using SudokuSolver;
-    
+
+    using Sudoku;
+
     /// <summary>
     /// Puzzle one from http://www.educationworld.com/a_lesson/sudoku/sudoku001.shtml
     /// </summary>
